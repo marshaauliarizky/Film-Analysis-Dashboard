@@ -23,7 +23,7 @@ python manage.py etl_category_performance
 python manage.py etl_rental_demand
 ```
 
-## 🗃️ OLAP Tables
+## OLAP Tables
 | Table | Description |
 |-------|-------------|
 | FilmPopularity | Rental count per film |
