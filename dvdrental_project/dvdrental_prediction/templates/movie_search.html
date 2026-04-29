@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Search Result</title>
+    <link rel="stylesheet" href="{% static 'dvdrental_prediction/css/mystyle.css' %}">
+</head>
+<body>
+    <h1>Movie Search Result</h1>
+    <a href="{% url 'movie_list' %}">Back to Search</a><br><br>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Release Year</th>
+            <th>Rating</th>
+        </tr>
+        {% for movie in movies %}
+        <tr>
+            <td>{{ movie.film_id }}</td>
+            <td>
+                <a href="{% url 'movie_detail' movie.film_id %}">
+                    {{ movie.title }}
+                </a>
+            </td>
+            <td>{{ movie.release_year }}</td>
+            <td>{{ movie.rating }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No movies found.</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

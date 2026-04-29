@@ -1,0 +1,1 @@
+alert("Welcome to DVD Rental Prediction!");

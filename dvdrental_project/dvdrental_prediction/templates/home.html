@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DVD Rental Analytics</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .logo {
+            width: 120px;
+            border-radius: 50%;
+            margin-bottom: 24px;
+            border: 3px solid #3b82f6;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #f1f5f9;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 24px;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+            background: #263548;
+        }
+
+        .card .icon {
+            font-size: 28px;
+            margin-bottom: 4px;
+        }
+
+        .card .title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #f1f5f9;
+        }
+
+        .card .desc {
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        .card .badge {
+            margin-top: 8px;
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            background: #1d4ed8;
+            color: #bfdbfe;
+            width: fit-content;
+        }
+
+        .footer {
+            margin-top: 48px;
+            color: #475569;
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="{% static 'dvdrental_prediction/images/pu_logo.png' %}" class="logo">
+    <h1>DVD Rental Analytics System</h1>
+    <p class="subtitle">Data Analytics & Machine Learning Dashboard</p>
+
+    <div class="card-grid">
+
+        <a href="{% url 'film_dashboard' %}" class="card">
+            <div class="icon">🎬</div>
+            <div class="title">Film Analysis</div>
+            <div class="desc">Film popularity, category performance, and rental demand prediction.</div>
+            <span class="badge">ML Model Active</span>
+        </a>
+
+        <a href="{% url 'customer_prediction_view' %}" class="card">
+            <div class="icon">👥</div>
+            <div class="title">Customer Dashboard</div>
+            <div class="desc">Customer behavior analysis and payment prediction.</div>
+            <span class="badge">ML Model Active</span>
+        </a>
+
+        <a href="/movies/" class="card">
+            <div class="icon">🎥</div>
+            <div class="title">Movie List</div>
+            <div class="desc">Browse and search all available movies in the DVD rental store.</div>
+            <span class="badge" style="background:#065f46; color:#6ee7b7;">Browse</span>
+        </a>
+
+        <a href="/about/" class="card">
+            <div class="icon">ℹ️</div>
+            <div class="title">About</div>
+            <div class="desc">Learn more about this DVD Rental Analytics System project.</div>
+            <span class="badge" style="background:#1e293b; color:#94a3b8; border: 1px solid #334155;">Info</span>
+        </a>
+
+    </div>
+
+    <p class="footer">DVD Rental Analytics System — Advanced Database Final Project</p>
+
+<script src="{% static 'dvdrental_prediction/js/script.js' %}"></script>
+</body>
+</html>
